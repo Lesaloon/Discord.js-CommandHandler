@@ -1,5 +1,5 @@
 const Command = require("../classes/Command.js");
-const {discordEmbed} = require("../config/functions.js")
+const {discordEmbed} = require("../config/functions.js");
 module.exports = new Command({
     name    : "ping",
     aliases : ["pong"]
