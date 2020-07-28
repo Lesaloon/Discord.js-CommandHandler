@@ -4,5 +4,5 @@ module.exports = new Command({
     name    : "ping",
     aliases : ["pong"]
 }, async(client, message, args) => {
-    message.channel.send(discordEmbed({description: "Hey"}));
+    message.channel.send(discordEmbed({description: `Pong! ${client.ws.ping}ms`}));
 });

@@ -1,3 +1,4 @@
-const {COLORS} = require("../infos/config.json");
+const {colors} = require("../infos/config.json");
 
-exports.EMBEDS = COLORS.EMBEDS;
+exports.embeds = colors.embeds
+exports.hexCode = colors.hexCode
