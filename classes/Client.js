@@ -1,23 +1,26 @@
 const {Client, Collection} = require("discord.js");
 const {readdir} = require("fs").promises;
-const {EMBEDS} = require("../config/colors.js")
+const {embeds, hexCode} = require("../config/colors.js")
 const {magenta, blueBright, blue, red} = require("chalk")
 /**
  * @extends CoolClient - An advenced discord client
- * @constructor - The client token and the client options
- * @function loadCommands - Load the client commands
+ * @constructor - The client token and the client option
+ * @method loadCommands - Load the client commands
+ * @method loadEvents - Load the client events
  */
 
 module.exports = class CoolClient extends Client {
-    constructor(TOKEN, PROPS, OPTIONS) {
-        super(OPTIONS); // Bot's Options
-            this.login(TOKEN)
+    constructor(token, props, option) {
+        super(option); // Bot's option
+            this.login(token)
                 .then(console.log(blue(`Discord Client is connecting`)))
-                .catch((err) => console.log(`Error: ${err}`));
+                .catch(console.error);
             this.commands = new Collection();
-            this.embedsColors = EMBEDS;
-            this.prefixes = PROPS.prefixes;
-            this.owners = PROPS.owners
+            this.embedsColors = embeds;
+            this.hexCodes = hexCode;
+            this.prefixes = props.prefixes;
+            this.prefix = undefined;
+            this.owners = props.owners;
     };
     loadCommands() {
         readdir("./commands/").then((files) => {
