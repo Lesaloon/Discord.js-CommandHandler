@@ -1,8 +1,11 @@
 {
-    "TOKEN": "NzEwMTIxODk2OTM0NjM3NjY5.Xxl5KA.uiwBtNvQMyg1poInCgGzojQza2o",
-    "PREFIXS": [""],
-    "OWNERS": [""],
-    "COLORS": {
-        "EMBEDS": ""
+    "token": "",
+    "prefixs": ["a!", "b!"],
+    "owners": [""],
+    "colors": {
+        "embeds": "",
+        "hexCode": {
+            "red": "#b52825"
+        }
     }
 }
