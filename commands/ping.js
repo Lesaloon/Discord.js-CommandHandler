@@ -1,7 +1,8 @@
-const Command = require("../classes/Command.js")
-
+const Command = require("../classes/Command.js");
+const {discordEmbed} = require("../config/functions.js")
 module.exports = new Command({
-    name: "ping"
+    name    : "ping",
+    aliases : ["pong"]
 }, async(client, message, args) => {
-    console.time("Pong!")
-}) 
+    message.channel.send(discordEmbed({description: "Hey"}));
+});
